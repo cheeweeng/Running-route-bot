@@ -6,6 +6,7 @@ Built using Zapier, Telegram API, OpenWeatherMap API, and custom JavaScript, thi
 * Attribution:  The custom JavaScript found in two nodes in the automation workflow were created by Claude.ai (Sonnet4)
 
 # Key Features  
+* Telegram integration - "Send Message" & "Get Message" Action
 * Parses natural language requests (e.g., "5km easy run")
 * Fetches real-time weather data via OpenWeatherMap API  
 * Provides motivational message
