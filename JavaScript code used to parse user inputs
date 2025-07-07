@@ -1,0 +1,47 @@
+// Get the message from Telegram
+const message = inputData.message.toLowerCase();
+
+// Set defaults
+let distance = 5;
+let unit = "km";
+let runType = "easy";
+let mood = "neutral";
+
+// Look for distance (like "8k", "5km", "3 miles")
+const distanceMatch = message.match(/(\d+(?:\.\d+)?)\s*(km|k|kilometers?|miles?|mi|m)?/i);
+if (distanceMatch) {
+    distance = parseFloat(distanceMatch[1]);
+    let matchedUnit = distanceMatch[2];
+    
+    if (matchedUnit) {
+        matchedUnit = matchedUnit.toLowerCase();
+        if (matchedUnit.includes('mi') || matchedUnit.includes('mile')) {
+            unit = "miles";
+        } else {
+            unit = "km";
+        }
+    } else {
+        unit = "km"; // Default to km if no unit specified
+    }
+}
+// Look for run type
+if (message.includes('tempo')) runType = 'tempo';
+if (message.includes('interval')) runType = 'interval';
+if (message.includes('recovery') || message.includes('recover')) runType = 'recovery';
+if (message.includes('long')) runType = 'long';
+if (message.includes('easy')) runType = 'easy';
+
+// Look for mood
+if (message.includes('tired')) mood = 'tired';
+if (message.includes('energetic')) mood = 'energetic';
+if (message.includes('motivated')) mood = 'motivated';
+if (message.includes('stressed')) mood = 'stressed';
+
+// Return the parsed data
+output = [{
+    distance: distance,
+    unit: unit,
+    runType: runType,
+    mood: mood,
+    originalMessage: message
+}];
