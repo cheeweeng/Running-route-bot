@@ -12,6 +12,7 @@ Built using Zapier, Telegram API, OpenWeatherMap API, and custom JavaScript, thi
 * Generates circular running routes via OpenRouteService with Google Maps links
 * Handles multiple run types (easy, tempo, interval, recovery)
 
+## Video Demo (unmute the video for sound):
 [Video demo](https://github.com/user-attachments/assets/f09c066d-1d63-4ba7-8c22-5a7e5621001e)
 
 ## Challenges & Solutions  
